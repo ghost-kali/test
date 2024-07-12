@@ -3,7 +3,7 @@ from dotenv import load_dotenv,find_dotenv
 from openai import OpenAI
 
 # Enter your Assistant ID here.
-ASSISTANT_ID = "asst_jlC3timSmMKoH0aa3bPgsldH"
+ASSISTANT_ID = "asst_rKQjeJyfIzzSdsNTxkp7xoeI"
 load_dotenv(find_dotenv())
 # Make sure your API key is set as an environment variable.
 client = OpenAI()
