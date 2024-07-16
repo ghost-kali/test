@@ -12,11 +12,14 @@ CORS(app)
 
 @app.post("/predict")
 def predict():
+    
     text = request.get_json().get("message")
+    ip = request.environ.get('HTTP_X_REAL_IP',request.remote_addr)
     response = get_response(text)
     message = {"answer": response}
-    
+    save_rec(text,response,ip)
     return jsonify(message)
 
 
-
+if   __name__ == "__main__" : 
+    app.run(debug=True)
