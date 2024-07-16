@@ -14,7 +14,7 @@ CORS(app)
 def predict():
     
     text = request.get_json().get("message")
-    ip = request.remote_addr
+    ip = request.headers['X-Forwarded-For']
     response = get_response(text)
     message = {"answer": response}
     save_rec(text,response,ip)
