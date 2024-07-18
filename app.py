@@ -1,4 +1,4 @@
-from requests import get
+
 from flask import Flask ,jsonify,render_template,request
 from flask_cors import CORS
 from airtable import save_rec
@@ -14,7 +14,7 @@ CORS(app)
 def predict():
     
     text = request.get_json().get("message")
-    ip = get('https://api.ipify.org').text
+    ip = request.get('https://api.ipify.org').text
     response = get_response(text)
     message = {"answer": response}
     save_rec(text,response,ip)
