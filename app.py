@@ -1,4 +1,4 @@
-
+from requests import get
 from flask import Flask ,jsonify,render_template,request
 from flask_cors import CORS
 from airtable import save_rec
