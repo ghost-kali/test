@@ -14,7 +14,7 @@ CORS(app)
 def predict():
     
     text = request.get_json().get("message")
-    ip = request.headers['X-Forwarded-For']
+    ip = get('https://api.ipify.org').text
     response = get_response(text)
     message = {"answer": response}
     save_rec(text,response,ip)
