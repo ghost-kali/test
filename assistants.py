@@ -3,7 +3,7 @@ from dotenv import load_dotenv,find_dotenv
 from openai import OpenAI
 
 # Enter your Assistant ID here.
-ASSISTANT_ID = "asst_rKQjeJyfIzzSdsNTxkp7xoeI"
+ASSISTANT_ID = "asst_4axLKfoOQrz2f5pQTzzsLE59"
 load_dotenv(find_dotenv())
 # Make sure your API key is set as an environment variable.
 client = OpenAI()
@@ -40,3 +40,5 @@ def get_response(question):
     latest_message = messages[0]
     print(f"💬 Response: {latest_message.content[0].text.value}")
     return latest_message.content[0].text.value
+
+
